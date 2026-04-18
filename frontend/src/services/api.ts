@@ -1,6 +1,6 @@
 import type { AutoCodeRequest, APIResponse } from '../types/api';
 
-const API_BASE_URL = 'http://localhost:8081';
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 export async function sendTask(userMessage: string): Promise<APIResponse> {
   const payload: AutoCodeRequest = { user_message: userMessage };
