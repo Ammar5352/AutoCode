@@ -1,11 +1,14 @@
 import json
 import re
+import os
 from .models import State
 from .logger import logger
 from langchain_groq import ChatGroq
 from ..config import CONFIG
+from dotenv import load_dotenv
+load_dotenv()
 
-api_key = CONFIG.get("GROQ_API_KEY")
+api_key = os.getenv("GROQ_API_KEY")
 
 planner_llm = ChatGroq(model="openai/gpt-oss-120b",api_key=api_key)
 executor_llm = ChatGroq(model="llama-3.1-8b-instant",api_key=api_key)
