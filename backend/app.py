@@ -7,7 +7,7 @@ app = FastAPI()
 # Allow frontend dev server to call the API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:8081"],
+    allow_origins=["*"], # Allowing all origins so Vercel can connect
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
