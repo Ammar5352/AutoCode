@@ -1,12 +1,15 @@
 from langgraph.graph import StateGraph, START, END
 from .models import State
 from .agents import PlannerAgent,ExecutorAgent,CodeReviewAgent,SummaryAgent,FeedbackAgent,SupervisorAgent,ResponseAgent
+from .logger import logger
 graph_builder = StateGraph(State)
 
 async def should_continue(state:State):
     if state.get("supervisor_succeed"):
+        logger.logit("INFO", "Graph", {"route": "SupervisorAgent -> SummaryAgent"}, state)
         return "SummaryAgent"
     else:
+        logger.logit("INFO", "Graph", {"route": "SupervisorAgent -> ExecutorAgent (retry)"}, state)
         return "ExecutorAgent"
 
 graph_builder.add_edge(START, "PlannerAgent")
