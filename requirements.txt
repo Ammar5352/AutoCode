@@ -1,0 +1,8 @@
+langgraph==1.1.8
+langchain==1.2.15
+langchain_groq==1.1.2
+openai==2.32.0
+python-dotenv==1.2.2
+fastapi==0.136.0
+uvicorn==0.44.0
+python-multipart==0.0.26
