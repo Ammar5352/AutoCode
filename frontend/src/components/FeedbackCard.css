@@ -1,0 +1,40 @@
+/* ============================================
+   FeedbackCard Component Styles
+   ============================================ */
+
+.feedback-card {
+  padding: var(--space-xs) 0;
+}
+
+.feedback-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.feedback-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--accent-warning-bg);
+  border: 1px solid rgba(245, 158, 11, 0.12);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast);
+}
+
+.feedback-item:hover {
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.feedback-item-icon {
+  color: var(--accent-warning);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.feedback-item-text {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.65;
+}

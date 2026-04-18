@@ -1,0 +1,120 @@
+/* ============================================
+   Header Component Styles
+   ============================================ */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(7, 7, 13, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.header-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--accent-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-glow);
+  transition: transform var(--transition-fast);
+}
+
+.header-logo:hover {
+  transform: scale(1.05);
+}
+
+.header-logo-icon {
+  font-size: 20px;
+  filter: brightness(1.2);
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header-tagline {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.02em;
+}
+
+.header-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--accent-success-bg);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-full);
+}
+
+.header-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-success);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.header-badge-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent-success);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@media (max-width: 480px) {
+  .header-inner {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .header-logo {
+    width: 34px;
+    height: 34px;
+  }
+
+  .header-title {
+    font-size: 16px;
+  }
+
+  .header-tagline {
+    display: none;
+  }
+}

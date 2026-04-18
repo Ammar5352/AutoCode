@@ -1,0 +1,82 @@
+/* ============================================
+   TabSwitcher Component Styles
+   ============================================ */
+
+.tab-switcher {
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+  overflow: hidden;
+}
+
+.tab-header {
+  margin: calc(-1 * var(--space-lg));
+  margin-bottom: 0;
+  padding: 0 var(--space-md);
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.tab-list {
+  display: flex;
+  gap: 0;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: var(--space-md) var(--space-lg);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.tab-button:hover {
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.tab-button--active {
+  color: var(--text-primary);
+}
+
+.tab-button--active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: var(--space-md);
+  right: var(--space-md);
+  height: 2px;
+  background: var(--accent-gradient);
+  border-radius: 2px 2px 0 0;
+}
+
+.tab-icon {
+  font-size: 15px;
+}
+
+.tab-label {
+  letter-spacing: 0.01em;
+}
+
+.tab-content {
+  padding-top: var(--space-md);
+  animation: fadeIn var(--transition-fast) ease-out;
+}
+
+@media (max-width: 480px) {
+  .tab-button {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 13px;
+  }
+
+  .tab-icon {
+    font-size: 13px;
+  }
+
+  .tab-header {
+    padding: 0 var(--space-sm);
+  }
+}

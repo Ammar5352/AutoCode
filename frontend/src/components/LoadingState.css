@@ -1,0 +1,120 @@
+/* ============================================
+   LoadingState Component Styles
+   ============================================ */
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-2xl) 0;
+}
+
+.loading-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-2xl);
+  max-width: 400px;
+  width: 100%;
+}
+
+.loading-visual {
+  margin-bottom: var(--space-lg);
+}
+
+.loading-rings {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loading-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+.loading-ring--outer {
+  inset: 0;
+  border-top-color: var(--accent-primary);
+  border-right-color: rgba(99, 102, 241, 0.3);
+  animation: spin 1.5s linear infinite;
+}
+
+.loading-ring--inner {
+  inset: 10px;
+  border-bottom-color: var(--accent-secondary);
+  border-left-color: rgba(139, 92, 246, 0.3);
+  animation: spin 1s linear infinite reverse;
+}
+
+.loading-core {
+  position: absolute;
+  inset: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.loading-text {
+  margin-bottom: var(--space-lg);
+}
+
+.loading-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.loading-description {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.loading-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.loading-step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 13px;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+}
+
+.loading-step--active {
+  color: var(--text-accent);
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.loading-step--pending {
+  color: var(--text-tertiary);
+}
+
+.loading-step-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.loading-step--active .loading-step-dot {
+  background: var(--accent-primary);
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+.loading-step--pending .loading-step-dot {
+  background: var(--text-tertiary);
+  opacity: 0.4;
+}

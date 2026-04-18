@@ -1,0 +1,44 @@
+/* ============================================
+   SummaryCard Component Styles
+   ============================================ */
+
+.summary-card {
+  padding: var(--space-xs) 0;
+}
+
+.summary-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.summary-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+.summary-item--bullet {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border-left: 2px solid var(--accent-primary);
+}
+
+.summary-item--paragraph {
+  padding: var(--space-xs) 0;
+}
+
+.summary-bullet {
+  color: var(--accent-primary);
+  font-size: 12px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.summary-item-text {
+  flex: 1;
+}

@@ -1,0 +1,20 @@
+/* ============================================
+   ResponseCard Component Styles
+   ============================================ */
+
+.response-card {
+  animation-delay: 0.1s;
+  animation-fill-mode: both;
+}
+
+.response-icon {
+  background: rgba(99, 102, 241, 0.12);
+}
+
+.response-text {
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.75;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

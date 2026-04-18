@@ -1,4 +1,5 @@
 from fastapi import APIRouter,Request
+from fastapi.responses import JSONResponse
 from .graph import graph
 from .models import AutoCodeRequest,APIResponse
 from .logger import logger
@@ -22,7 +23,15 @@ async def autocode_agent(request: AutoCodeRequest)-> APIResponse:
         "logs": [],
     }
 
-    result_state = await graph.ainvoke(state)
+    try:
+        result_state = await graph.ainvoke(state)
+    except Exception as e:
+        logger.logit("ERROR", "API", {"event": "agent_error", "error": str(e)})
+        return JSONResponse(
+            status_code=500,
+            content={"detail": f"AI agent error: {str(e)}"},
+        )
+
     response= result_state.get('response')
     task_code = result_state.get('executor_code')
     summary = result_state.get('summary_response') or ""
