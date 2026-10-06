@@ -11,7 +11,7 @@ load_dotenv()
 api_key = os.getenv("GROQ_API_KEY")
 
 planner_llm = ChatGroq(model="openai/gpt-oss-120b",api_key=api_key)
-executor_llm = ChatGroq(model="llama-3.1-8b-instant",api_key=api_key)
+executor_llm = ChatGroq(model="openai/gpt-oss-20b",api_key=api_key)
 codereview_llm = ChatGroq(model="openai/gpt-oss-20b",api_key=api_key)
 supervisor_llm = ChatGroq(model="qwen/qwen3-32b",api_key=api_key)
 summary_llm = ChatGroq(model="openai/gpt-oss-20b",api_key=api_key)
